@@ -1,5 +1,5 @@
 const express = require("express");
-const { faker } = require('@faker-js/faker');
+const routerApi = require("./routes");
 
 
 const app = express();
@@ -12,6 +12,9 @@ app.get('/', (req, res) => {
 app.get('/route-new', (req, res) => {
     res.send('Hola soy una nueva ruta o endpoint');
 });
+
+
+/*
 
 app.get('/products', (req, res) => {
   const products = [];
@@ -58,6 +61,7 @@ app.get('/categories/:categoryId', (req, res) => {
     });
 });
 
+
 app.get('/people', (req, res) => {
     res.json([{
         name: 'Arturo',
@@ -76,6 +80,9 @@ app.get('/people/:id', (req, res) => {
         type: 'employee'
     });
 });
+*/
+
+routerApi(app);
 
 app.listen(PORT, () => {
     console.log('Mi puerto es: ' + PORT);
